@@ -76,7 +76,7 @@ This tool provides a convenient way to analyze and visualize AWS cloud spending 
    mkdir -p ~/.aws
    # Set up your credentials in ~/.aws/credentials and ~/.aws/config
    ```
-   If you useAWS IAM Identity Center, follow the [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html) to configure your short-term credentials
+   If you use AWS IAM Identity Center, follow the [docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html) to configure your short-term credentials
 
 ## Usage
 
@@ -256,7 +256,7 @@ We can use [`nginx`](https://nginx.org/) as a reverse-proxy so that it can provi
 
 1. Enable access to TCP port 443 from the IP address of your MCP client (your laptop, or anywhere) in the inbound rules in the security group associated with your EC2 instance.
 
-1. You would need to have an HTTPS certificate and private key to proceed. Let's say you use `your-mcp-server-domain-name.com` as the domain for your MCP server then you will need an SSL cert for `your-mcp-server-domain-name.com` and it will be accessible to MCP clients as `https://your-mcp-server-domain-name.com/sse`. _While you can use a self-signed cert but it would require disabling SSL verification on the MCP client, we DO NOT recommend you do that_. If you are hosting your MCP server on EC2 then you could generate an SSL cert using [no-ip](https://www.noip.com/) or [Let' Encrypt](https://letsencrypt.org/) or other similar services. Place the SSL cert and private key files in `/etc/ssl/certs` and `/etc/ssl/privatekey` folders respectively on your EC2 machine.
+1. You would need to have an HTTPS certificate and private key to proceed. Let's say you use `your-mcp-server-domain-name.com` as the domain for your MCP server then you will need an SSL cert for `your-mcp-server-domain-name.com` and it will be accessible to MCP clients as `https://your-mcp-server-domain-name.com/sse`. _While you can use a self-signed cert but it would require disabling SSL verification on the MCP client, we DO NOT recommend you do that_. If you are hosting your MCP server on EC2 then you could generate an SSL cert using [no-ip](https://www.noip.com/) or [Let's Encrypt](https://letsencrypt.org/) or other similar services. Place the SSL cert and private key files in `/etc/ssl/certs` and `/etc/ssl/privatekey` folders respectively on your EC2 machine.
 
 1. Install `nginx` on your EC2 machine using the following commands.
 
