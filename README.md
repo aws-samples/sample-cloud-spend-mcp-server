@@ -21,10 +21,6 @@ flowchart LR
 
 You can run the MCP server locally and access it via the Claude Desktop or you could also run a Remote MCP server on Amazon EC2 and access it via a MCP client built into a LangGraph Agent.
 
-## Demo video
-
-[![AWS Cost Explorer MCP Server Deep Dive](https://img.youtube.com/vi/WuVOmYLRFmI/maxresdefault.jpg)](https://youtu.be/WuVOmYLRFmI)
-
 ## Overview
 
 This tool provides a convenient way to analyze and visualize AWS cloud spending data using Anthropic's Claude model as an interactive interface. It functions as an MCP server that exposes AWS Cost Explorer API functionality to Claude Desktop, allowing you to ask questions about your AWS spend in natural language.
