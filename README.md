@@ -113,10 +113,9 @@ Add the following to your Claude Desktop configuration file. The file can be fou
   "mcpServers": {
     "aws-cost-explorer": {
       "command": "docker",
-      "args": [ "run", "-i", "--rm", "-e", "AWS_ACCESS_KEY_ID", "-e", "AWS_SECRET_ACCESS_KEY", "-e", "AWS_REGION", "-e", "BEDROCK_LOG_GROUP_NAME", "-e", "MCP_TRANSPORT", "aws-cost-explorer-mcp:latest" ],
+      "args": [ "run", "-i", "--rm", "-e", "AWS_PROFILE", "-e", "AWS_REGION", "-e", "BEDROCK_LOG_GROUP_NAME", "-e", "MCP_TRANSPORT", "aws-cost-explorer-mcp:latest" ],
       "env": {
-        "AWS_ACCESS_KEY_ID": "YOUR_ACCESS_KEY_ID",
-        "AWS_SECRET_ACCESS_KEY": "YOUR_SECRET_ACCESS_KEY",
+        "AWS_PROFILE": "YOUR_AWS_PROFILE_NAME",
         "AWS_REGION": "us-east-1",
         "BEDROCK_LOG_GROUP_NAME": "YOUR_CLOUDWATCH_BEDROCK_MODEL_INVOCATION_LOG_GROUP_NAME",
         "MCP_TRANSPORT": "stdio"
@@ -126,7 +125,7 @@ Add the following to your Claude Desktop configuration file. The file can be fou
 }
 ```
 
-> **IMPORTANT**: Replace `YOUR_ACCESS_KEY_ID` and `YOUR_SECRET_ACCESS_KEY` with your actual AWS credentials. Never commit actual credentials to version control.
+> **IMPORTANT**: Replace `YOUR_AWS_PROFILE_NAME` with your actual AWS profile name. This profile should be configured in your `~/.aws/credentials` and `~/.aws/config` files.
 
 ##### Option 2: Using UV (without Docker)
 
@@ -144,8 +143,7 @@ If you prefer to run the server directly without Docker, you can use UV:
           "server.py"
       ],
       "env": {
-        "AWS_ACCESS_KEY_ID": "YOUR_ACCESS_KEY_ID",
-        "AWS_SECRET_ACCESS_KEY": "YOUR_SECRET_ACCESS_KEY",
+        "AWS_PROFILE": "YOUR_AWS_PROFILE_NAME",
         "AWS_REGION": "us-east-1",
         "BEDROCK_LOG_GROUP_NAME": "YOUR_CLOUDWATCH_BEDROCK_MODEL_INVOCATION_LOG_GROUP_NAME",
         "MCP_TRANSPORT": "stdio"
